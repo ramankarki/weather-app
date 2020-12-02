@@ -1,0 +1,261 @@
+.CurrentWeather {
+  width: 100%;
+  background-color: #1e213a;
+  padding: 2.2rem 0;
+  position: relative;
+}
+
+.CurrentWeather-Img {
+  margin-top: 1rem;
+  height: 250px;
+  background-image: url("../../images/Cloud-background.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (min-width: 576px) {
+  .CurrentWeather-Img {
+    margin-top: 2rem;
+  }
+}
+
+.CurrentWeather-Img img {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+.CurrentWeather-Temp {
+  text-align: center;
+}
+
+.CurrentWeather-Value {
+  font-size: 7rem;
+  color: white;
+}
+
+.CurrentWeather-Unit {
+  font-size: 3.5rem;
+  color: #a09fb1;
+}
+
+.CurrentWeather-Desc {
+  text-align: center;
+  color: #a09fb1;
+  font-size: 2rem;
+}
+
+.CurrentWeather-Date {
+  margin-top: 2.5rem;
+  color: #a09fb1;
+  text-align: center;
+}
+
+.CurrentWeather-Location {
+  margin-top: 1rem;
+  color: #a09fb1;
+  text-align: center;
+}
+
+.CurrentWeather-Location img {
+  width: 12px;
+  height: auto;
+  vertical-align: middle;
+}
+
+.degree {
+  width: 7px;
+  height: 7px;
+  display: inline-block;
+  border: 1px solid #a09fb1;
+  vertical-align: text-top;
+  border-radius: 100rem;
+}
+
+.SearchForPlaces {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  height: 40px;
+}
+
+.SearchForPlaces-Btn {
+  font-size: 1rem;
+  height: 100%;
+  padding: 0 1.3rem;
+  background-color: #6e707a;
+  color: #e7e7eb;
+  border: none;
+  -webkit-box-shadow: 0px 4px 15px -5px black;
+          box-shadow: 0px 4px 15px -5px black;
+  cursor: pointer;
+  -webkit-transition: 300ms ease-out;
+  transition: 300ms ease-out;
+}
+
+.SearchForPlaces-Btn:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.SearchForPlaces-Icon {
+  -webkit-box-shadow: 0px 4px 15px -5px black;
+          box-shadow: 0px 4px 15px -5px black;
+  background: #6e707a 30%;
+  padding: 0.5rem;
+  border-radius: 100rem;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.SearchForPlaces-Icon img {
+  width: 22px;
+  height: 22px;
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+  display: block;
+  margin: auto;
+}
+
+.SearchForPlacesInput {
+  -webkit-transition: 300ms ease-out;
+  transition: 300ms ease-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1e213a;
+}
+
+.SearchForPlacesInput-wrapper {
+  width: 90%;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.Form {
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Form-Input {
+  padding: 0.7rem 1rem;
+  border: 1px solid #8c8c97;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.Form-InputField {
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 0.9rem;
+  border: none;
+  margin-left: 0.7rem;
+  color: #e7e7eb;
+  width: 100%;
+}
+
+.Form-InputField::-webkit-input-placeholder {
+  color: #616475;
+}
+
+.Form-InputField:-ms-input-placeholder {
+  color: #616475;
+}
+
+.Form-InputField::-ms-input-placeholder {
+  color: #616475;
+}
+
+.Form-InputField::placeholder {
+  color: #616475;
+}
+
+.Form-SubmitBtn {
+  background-color: #3c47e9;
+  border: 1px solid #3c47e9;
+  color: #e7e7eb;
+  padding: 0.8rem 1rem;
+  font-size: 0.9rem;
+  margin-left: 1rem;
+  -webkit-transition: 300ms ease-out;
+  transition: 300ms ease-out;
+}
+
+.Form-SubmitBtn:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.Search-Icon {
+  width: 20px;
+  height: 20px;
+}
+
+.Cities {
+  margin-top: 2rem;
+  display: -ms-grid;
+  display: grid;
+  grid-row-gap: 2rem;
+}
+
+.Cities-Item {
+  border: 1px solid #616475;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.Cities-Name {
+  color: #e7e7eb;
+  font-size: 0.8rem;
+}
+
+.right-angle-icon {
+  width: 12px;
+  height: 12px;
+}
+
+.exit-icon {
+  width: 20px;
+  height: 20px;
+  -webkit-filter: invert(90%);
+          filter: invert(90%);
+  display: block;
+  margin-left: auto;
+}
+/*# sourceMappingURL=CurrentWeather.css.map */
