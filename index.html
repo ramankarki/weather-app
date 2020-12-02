@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+    rel="stylesheet"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="images/devchallenges.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="css/CurrentWeather/CurrentWeather.css">
+    <link rel="stylesheet" href="css/main/main.css" />
+    
+    <title>Weather App</title>
+  </head>
+  <body>
+    <!-- main container -->
+    <div class="app-container">
+
+
+      <div class="CurrentWeather CurrentWeather-js">
+        <div class="SearchForPlaces">
+          <button class="SearchForPlaces-Btn search-for-place-js">Search for places</button>
+          <div class="SearchForPlaces-Icon">
+            <img src="images/geolocation.svg" alt="geo location icon">
+          </div>
+        </div>
+
+        <div class="CurrentWeather-Img">
+          <img src="images/Clear.png" alt="clear sky weather image">
+        </div>
+
+        <div class="CurrentWeather-Temp">
+          <span class="CurrentWeather-Value">15</span>
+
+          <span class="CurrentWeather-Unit">
+            <span class="degree"></span>C
+          </span>
+        </div>
+
+        <p class="CurrentWeather-Desc">Shower</p>
+
+        <div class="CurrentWeather-Date">
+          <span>Today</span> . <span class="date">Fri, 5 June</span>
+        </div>
+
+        <div class="CurrentWeather-Location">
+          <img src="images/location-icon.svg" alt="location icon" class="Location-Icon">
+          <span class="Location-Address">Helsinki</span>
+        </div>
+
+        <!-- absolutely positioned -->
+        <div class="SearchForPlacesInput SearchForPlacesInput-js">
+          <div class="SearchForPlacesInput-wrapper">
+            <img class="exit-icon" src="images/exit-icon.svg" alt="exit icon">
+            <div class="Form">
+              <label class="Form-Input">
+                <img class="Search-Icon" src="images/search-icon.svg" alt="search icon">
+                <input class="Form-InputField" type="text" name="location" placeholder="search location">
+              </label>
+              <button class="Form-SubmitBtn">Search</button>
+            </div>
+
+            <div class="Cities">
+              <div class="Cities-Item">
+                <span class="Cities-Name">London</span>
+                <img class="right-angle-icon" src="images/right-angle-icon.svg" alt="right arrow icon">
+              </div>
+              <div class="Cities-Item">
+                <span class="Cities-Name">Barcelona</span>
+                <img class="right-angle-icon" src="images/right-angle-icon.svg" alt="right arrow icon">
+              </div>
+              <div class="Cities-Item">
+                <span class="Cities-Name">Long Beach</span>
+                <img class="right-angle-icon" src="images/right-angle-icon.svg" alt="right arrow icon">
+              </div>
+            </div>
+          </div>
+        </div> <!--absolutely positioned-->
+      </div> <!--current weather section-->
+
+
+          </div>
+
+
+
+    <script src="js/CurrentWeather.js"></script>
+  </body>
+</html>
