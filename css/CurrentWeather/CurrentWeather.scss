@@ -1,8 +1,17 @@
 .CurrentWeather {
   width: 100%;
+  height: 100vh;
+  min-height: 620px;
+  max-height: 750px;
+  @media (min-width: 786px){
+    max-height: unset;
+  }
   background-color: #1e213a;
-  padding: 2.2rem 0;
+  padding: 1.5rem 0;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   &-Img {
     margin-top: 1rem;
@@ -18,6 +27,10 @@
       margin-top: 2rem;
     }
 
+    @media (min-width: 786px) {
+      margin-top: 0;
+    }
+
     img {
       width: 150px;
       height: auto;
@@ -31,29 +44,30 @@
   }
 
   &-Value {
-    font-size: 7rem;
+    font-size: 5rem;
     color: white;
   }
 
   &-Unit {
-    font-size: 3.5rem;
+    font-size: 3rem;
     color: #a09fb1;
   }
 
   &-Desc {
     text-align: center;
     color: #a09fb1;
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   &-Date {
     margin-top: 2.5rem;
     color: #a09fb1;
     text-align: center;
+    font-size: .95rem;
   }
 
   &-Location {
-    margin-top: 1rem;
+    margin-top: .95rem;
     color: #a09fb1;
     text-align: center;
 
@@ -175,7 +189,7 @@
     margin-left: 1rem;
     transition: 300ms ease-out;
     &:active {
-      transform: scale(0.9);
+      transform: scale(0.8);
     }
   }
 }
