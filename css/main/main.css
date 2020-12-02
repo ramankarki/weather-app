@@ -25,4 +25,20 @@ html, body {
 .app-container {
   overflow: hidden;
 }
+
+@media (min-width: 786px) {
+  .app-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 40% 60%;
+        grid-template-columns: 40% 60%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .app-container {
+    -ms-grid-columns: 30% 70%;
+        grid-template-columns: 30% 70%;
+  }
+}
 /*# sourceMappingURL=main.css.map */

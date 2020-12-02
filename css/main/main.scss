@@ -23,5 +23,14 @@ html, body {
 
 .app-container {
   overflow: hidden;
+
+  @media (min-width: 786px) {
+    display: grid;
+    grid-template-columns: 40% 60%;
+  }
+  
+  @media (min-width: 1200px) {
+    grid-template-columns: 30% 70%;
+  }
 }
 
