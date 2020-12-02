@@ -6,6 +6,7 @@ const exitBtn = document.querySelector(".exit-icon");
 searchForPlaceInput.style.left = `-${currentWeather.clientWidth}px`;
 
 searchForPlace.addEventListener("click", () => {
+  searchForPlaceInput.classList.add("SearchForPlacesInput-transition");
   searchForPlaceInput.style.left = 0;
 })
 
