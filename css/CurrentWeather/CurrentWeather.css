@@ -1,31 +1,30 @@
 .CurrentWeather {
   width: 100%;
-  height: 100vh;
-  min-height: 620px;
-  max-height: 750px;
+  height: 100%;
   background-color: #1e213a;
   padding: 1.5rem 0;
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
-@media (min-width: 786px) {
+@media (max-width: 768px) {
   .CurrentWeather {
-    max-height: unset;
+    min-height: 620px;
+    max-height: 730px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 
 .CurrentWeather-Img {
-  margin-top: 1rem;
+  margin-top: 2rem;
   height: 250px;
   background-image: url("../../images/Cloud-background.png");
   background-position: center;
@@ -79,14 +78,14 @@
 }
 
 .CurrentWeather-Date {
-  margin-top: 2.5rem;
+  margin-top: 3rem;
   color: #a09fb1;
   text-align: center;
-  font-size: .95rem;
+  font-size: 0.95rem;
 }
 
 .CurrentWeather-Location {
-  margin-top: .95rem;
+  margin-top: 1rem;
   color: #a09fb1;
   text-align: center;
 }
@@ -140,24 +139,47 @@
           transform: scale(0.95);
 }
 
-.SearchForPlaces-Icon {
-  -webkit-box-shadow: 0px 4px 15px -5px black;
-          box-shadow: 0px 4px 15px -5px black;
-  background: #6e707a 30%;
-  padding: 0.5rem;
-  border-radius: 100rem;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
+.switchCFdegree {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.SearchForPlaces-Icon img {
-  width: 22px;
-  height: 22px;
-  -webkit-filter: invert(100%);
-          filter: invert(100%);
-  display: block;
-  margin: auto;
+.switchC, .switchF {
+  background-color: #585676;
+  border-radius: 10rem;
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  color: #e7e7eb;
+  font-weight: bold;
+  -webkit-box-shadow: 0px 4px 15px -5px black;
+          box-shadow: 0px 4px 15px -5px black;
+}
+
+.switchC::before, .switchF::before {
+  content: "o";
+  font-weight: normal;
+  margin-bottom: 1rem;
+  font-size: .7rem;
+}
+
+.switchF {
+  margin-left: 0.5rem;
+}
+
+.switchActive {
+  background-color: #e7e7eb;
+  color: #110e3c;
 }
 
 .SearchForPlacesInput {
@@ -178,6 +200,12 @@
   width: 90%;
   margin: 0 auto;
   padding: 2rem 0;
+}
+
+@media (min-width: 400px) {
+  .SearchForPlacesInput-wrapper {
+    width: 80%;
+  }
 }
 
 .Form {
@@ -286,5 +314,6 @@
           filter: invert(90%);
   display: block;
   margin-left: auto;
+  cursor: pointer;
 }
 /*# sourceMappingURL=CurrentWeather.css.map */
