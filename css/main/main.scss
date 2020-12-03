@@ -22,7 +22,8 @@ html, body {
 }
 
 .app-container {
-  overflow: hidden;
+  height: 100%;
+  width: 100%;
 
   @media (min-width: 786px) {
     display: grid;
