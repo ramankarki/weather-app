@@ -10,7 +10,7 @@
 
 @media (min-width: 768px) {
   .cards-wrapper {
-    max-width: 600px;
+    max-width: 700px;
   }
 }
 
@@ -176,5 +176,65 @@
   text-align: right;
   color: #E7E7EB;
   font-size: .7rem;
+}
+
+.FutureCard {
+  margin-top: 2.5rem;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+}
+
+@media (min-width: 786px) {
+  .FutureCard {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    max-width: unset;
+  }
+}
+
+@media (min-width: 1200px) {
+  .FutureCard {
+    -ms-grid-columns: (1fr)[5];
+        grid-template-columns: repeat(5, 1fr);
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.FutureCard-Item {
+  background-color: #1E213A;
+  padding: .7rem .8rem;
+}
+
+.FutureCard-Date {
+  font-size: .9rem;
+  color: #E7E7EB;
+  text-align: center;
+}
+
+.FutureCard-WeatherImg {
+  width: 80%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+.FutureCard-MinMaxTemp {
+  font-size: .9rem;
+  color: #E7E7EB;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 /*# sourceMappingURL=cards.css.map */
