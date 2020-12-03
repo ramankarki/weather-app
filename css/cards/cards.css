@@ -41,7 +41,7 @@
 
 @media (min-width: 786px) {
   .Highlights-Row {
-    grid-gap: 2rem;
+    grid-gap: 1rem;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -133,7 +133,7 @@
 }
 
 .Highlights-Wind, .Highlights-Humidity, .Highlights-Visibility, .Highlights-Air {
-  padding: 1.2rem 0;
+  padding: 1rem 0;
   grid-column: span 12;
   background-color: #1E213A;
   max-width: 350px;
@@ -169,7 +169,7 @@
 .indicatorLevel {
   height: 100%;
   width: 84%;
-  background-color: #FFEC65;
+  background-color: #1fcf1f;
 }
 
 .indicatorPerSymbol {
@@ -179,7 +179,7 @@
 }
 
 .FutureCard {
-  margin-top: 2.5rem;
+  margin-top: 2rem;
   max-width: 350px;
   margin-left: auto;
   margin-right: auto;
