@@ -14,3 +14,14 @@ exitBtn.addEventListener("click", () => {
   searchForPlaceInput.style.left = `-${currentWeather.clientWidth}px`;
 });
 
+const switchC = document.querySelector(".switchC");
+const switchF = document.querySelector(".switchF");
+switchC.addEventListener("click", () => {
+  switchF.classList.remove("switchActive");
+  switchC.classList.add("switchActive");
+});
+switchF.addEventListener("click", () => {
+  switchC.classList.remove("switchActive");
+  switchF.classList.add("switchActive");
+});
+
