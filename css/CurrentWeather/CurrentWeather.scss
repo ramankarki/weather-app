@@ -228,6 +228,21 @@
 
   &-Item {
     border: 1px solid #616475;
+    cursor: pointer;
+
+    @media (min-width: 992px) {
+      border: 1px solid rgba(255, 255, 255, 0);
+      & .right-angle-icon {
+        visibility: hidden;
+      }
+      &:hover {
+        border: 1px solid #8c8c97;
+      }
+
+      &:hover .right-angle-icon {
+        visibility: visible;
+      }
+    }
     padding: 1rem;
     display: flex;
     align-items: center;

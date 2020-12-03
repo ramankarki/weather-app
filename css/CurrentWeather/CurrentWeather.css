@@ -285,6 +285,7 @@
 
 .Cities-Item {
   border: 1px solid #616475;
+  cursor: pointer;
   padding: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -295,6 +296,21 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+@media (min-width: 992px) {
+  .Cities-Item {
+    border: 1px solid rgba(255, 255, 255, 0);
+  }
+  .Cities-Item .right-angle-icon {
+    visibility: hidden;
+  }
+  .Cities-Item:hover {
+    border: 1px solid #8c8c97;
+  }
+  .Cities-Item:hover .right-angle-icon {
+    visibility: visible;
+  }
 }
 
 .Cities-Name {
