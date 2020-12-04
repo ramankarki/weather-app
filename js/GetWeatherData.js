@@ -88,6 +88,7 @@ function setFutureWeather(dailyData) {
   }
 }
 
+// ---
 async function searchCity() {
   let inputCity = document.querySelector(".Form-InputField").value;
   document.querySelector(".Form-InputField").value = "";
@@ -169,6 +170,7 @@ function switchBackRecent() {
   });
 }
 
+// ---
 
 navigator.geolocation.getCurrentPosition((position) => {
   let lat, long;
