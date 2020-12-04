@@ -76,12 +76,24 @@ function setFutureWeather(dailyData) {
 
   let elem = 0;
   for (let i = tomorrow; i <= 5; i++) {
-    maxElements[elem].textContent = Math.round(dailyData[i].temp.max);
+    let temp;
+    if (activeTempUnit === "F") {
+      temp = Math.round(+dailyData[i].temp.max * (9 / 5) + 32);
+    } else {
+      temp = Math.round(+dailyData[i].temp.max);
+    }
+    maxElements[elem].textContent = temp;
     elem++;
   }
   elem = 0;
   for (let i = tomorrow; i <= 5; i++) {
-    minElements[elem].textContent = Math.round(dailyData[i].temp.min);
+    let temp;
+    if (activeTempUnit === "F") {
+      temp = Math.round(+dailyData[i].temp.min * (9 / 5) + 32);
+    } else {
+      temp = Math.round(+dailyData[i].temp.min);
+    }
+    minElements[elem].textContent = temp;
     futureWeatherImg[elem].setAttribute("src", `images/${dailyData[i].weather[0].description}.svg`);
     futureWeatherDesc[elem].textContent = dailyData[i].weather[0].description;
     elem++;
