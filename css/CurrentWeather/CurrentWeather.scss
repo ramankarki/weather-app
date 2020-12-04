@@ -84,6 +84,7 @@
       width: 12px;
       height: auto;
       vertical-align: middle;
+      margin-right: 1rem;
     }
   }
 }
@@ -150,7 +151,7 @@
   }
 }
 
-// -------------------------------
+// ----------------------------------------------------
 
 .SearchForPlacesInput {
   position: absolute;
@@ -225,7 +226,7 @@
 .Cities {
   margin-top: 2rem;
   display: grid;
-  grid-row-gap: 2rem;
+  grid-row-gap: 1.5rem;
 
   &-Item {
     border: 1px solid #616475;
