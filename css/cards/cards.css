@@ -220,15 +220,21 @@
 }
 
 .FutureCard-WeatherImg {
-  width: 80%;
+  width: 60%;
   height: auto;
   display: block;
   margin: 0 auto;
-  margin-bottom: 1rem;
+}
+
+.FutureCard-Desc {
+  color: #E7E7EB;
+  font-size: .8rem;
+  text-align: center;
+  margin: .5rem 0 1rem;
 }
 
 .FutureCard-MinMaxTemp {
-  font-size: .9rem;
+  font-size: .8rem;
   color: #E7E7EB;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -236,5 +242,18 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.FutureCard-MinTemp, .FutureCard-MaxTemp {
+  position: relative;
+}
+
+.FutureCard-MinTemp::before, .FutureCard-MaxTemp::before {
+  content: "o";
+  font-weight: normal;
+  font-size: .5rem;
+  position: absolute;
+  top: -5px;
+  left: -3px;
 }
 /*# sourceMappingURL=cards.css.map */
