@@ -42,4 +42,15 @@ html, body {
         grid-template-columns: 30% 70%;
   }
 }
+
+.attribution {
+  margin-top: 2rem;
+  font-size: .75rem;
+  color: #656588;
+  text-align: center;
+}
+
+.attribution a {
+  color: #8b8ba3;
+}
 /*# sourceMappingURL=main.css.map */
