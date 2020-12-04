@@ -51,6 +51,15 @@
   &-Unit {
     font-size: 3rem;
     color: #a09fb1;
+    position: relative;
+    margin-left: 1rem;
+    &::before {
+      content: "o";
+      position: absolute;
+      font-weight: normal;
+      top: 0;
+      font-size: .7rem;
+    }
   }
 
   &-Desc {
