@@ -8,7 +8,6 @@ async function getWeatherData(url, lat, long) {
   const current = weatherDataJson.current;
   const daily = weatherDataJson.daily;
 
-  console.log(current);
   setHighlights([
     current.wind_speed,
     current.humidity,
@@ -18,7 +17,6 @@ async function getWeatherData(url, lat, long) {
   
   let cityData = await fetch(`https://api.openweathermap.org/data/2.5/weather?appid=114843591b3cb4652a2b94e65486c00a&units=metric&lang=en&lat=${lat}&lon=${long}`);
   cityData = await cityData.json();
-  console.log(cityData);
   
   tempC = Math.trunc(current.temp);
   tempF = Math.round(current.temp * (9 / 5) + 32);
@@ -60,12 +58,11 @@ function setCurrentWeather(temp, desc, cityName, country) {
 
 
 function setFutureWeather(dailyData) {
-  dailyData.forEach(element => {
-    let unixTime = element.dt;
-    let date = new Date(unixTime*1000);
-    console.log(date);
-    console.log(element);
-  });
+  // dailyData.forEach(element => {
+  //   let unixTime = element.dt;
+  //   let date = new Date(unixTime*1000);
+  //   console.log(date);
+  // });
 
   // tomorrow is second index of daily data because data starts from current day to current day total 8 days data
   let tomorrow = 1;
@@ -124,15 +121,39 @@ navigator.geolocation.getCurrentPosition((position) => {
   futureCardDates[0].textContent = "Tomorrow";
 })();
 
+
+const futureUnits = document.querySelectorAll(".future-temp-unit-js");
+const futureValue = document.querySelectorAll(".future-temp-js");
 document.querySelector(".switchC").addEventListener("click", () => {
+  futureValue.forEach(element => {
+    if (activeTempUnit === "F") {
+      element.textContent = Math.round((+element.textContent - 32) * 5/9);
+    }
+  });
+
   activeTempUnit = "C";
   document.querySelector(".CurrentWeather-Value").textContent = tempC;
   document.querySelector(".CurrentWeather-Unit").textContent = activeTempUnit;
+
+  futureUnits.forEach(element => {
+    element.textContent = "C";
+  });
 });
 
+
 document.querySelector(".switchF").addEventListener("click", () => {
+  futureValue.forEach(element => {
+    if (activeTempUnit === "C") {
+      element.textContent = Math.round(+element.textContent * (9 / 5) + 32);
+    }
+  });
+
   activeTempUnit = "F";
   document.querySelector(".CurrentWeather-Value").textContent = tempF;
   document.querySelector(".CurrentWeather-Unit").textContent = activeTempUnit;
+
+  futureUnits.forEach(element => {
+    element.textContent = "F";
+  });
 });
 
