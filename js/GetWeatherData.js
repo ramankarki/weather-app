@@ -1,5 +1,6 @@
-let activeTempUnit = "c";
-let temp;
+let activeTempUnit = "C";
+let tempC;
+let tempF;
 
 async function getWeatherData(url, lat, long) {
   const weatherData = await fetch(url);
@@ -19,7 +20,13 @@ async function getWeatherData(url, lat, long) {
   cityData = await cityData.json();
   console.log(cityData.name);
   
-  setCurrentWeather(current.temp, current.weather[0].description, cityData.name);
+  tempC = Math.trunc(current.temp);
+  tempF = Math.round(current.temp * (9 / 5) + 32);
+  if (activeTempUnit === "C") {
+    setCurrentWeather(tempC, current.weather[0].description, cityData.name);
+  } else {
+    setCurrentWeather(tempF, current.weather[0].description, cityData.name);
+  }
 }
 
 
@@ -41,13 +48,9 @@ function setHighlights(highlights) {
 }
 
 
-function setCurrentWeather(tempC, desc, cityName) {
-  if (activeTempUnit !== "c") {
-    temp = Math.round(tempC * (9 / 5) + 32);
-  } else {
-    temp = Math.trunc(tempC);
-  }
+function setCurrentWeather(temp, desc, cityName) {
   document.querySelector(".CurrentWeather-Value").textContent = temp;
+  document.querySelector(".CurrentWeather-Unit").textContent = activeTempUnit;
   document.querySelector(".CurrentWeather-Desc").textContent = desc;
   document.querySelector(".currentWeatherImg-js").setAttribute("src", `images/${desc}.png`);
   document.querySelector(".Location-Address").textContent = cityName;
@@ -74,3 +77,16 @@ navigator.geolocation.getCurrentPosition((position) => {
   let outputDate = `${dateArr[0]}, ${+dateArr[2]} ${dateArr[1]}`;
   document.querySelector(".date-js").textContent = outputDate;
 })();
+
+document.querySelector(".switchC").addEventListener("click", () => {
+  activeTempUnit = "C";
+  document.querySelector(".CurrentWeather-Value").textContent = tempC;
+  document.querySelector(".CurrentWeather-Unit").textContent = activeTempUnit;
+});
+
+document.querySelector(".switchF").addEventListener("click", () => {
+  activeTempUnit = "F";
+  document.querySelector(".CurrentWeather-Value").textContent = tempF;
+  document.querySelector(".CurrentWeather-Unit").textContent = activeTempUnit;
+});
+
