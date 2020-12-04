@@ -107,15 +107,6 @@
   vertical-align: middle;
 }
 
-.degree {
-  width: 7px;
-  height: 7px;
-  display: inline-block;
-  border: 1px solid #a09fb1;
-  vertical-align: text-top;
-  border-radius: 100rem;
-}
-
 .SearchForPlaces {
   display: -webkit-box;
   display: -ms-flexbox;
