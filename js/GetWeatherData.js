@@ -8,7 +8,7 @@ async function getWeatherData(url, lat, long) {
   const current = weatherDataJson.current;
   const daily = weatherDataJson.daily;
 
-  console.log(current, daily);
+  console.log(current);
   setHighlights([
     current.wind_speed,
     current.humidity,
@@ -18,15 +18,17 @@ async function getWeatherData(url, lat, long) {
   
   let cityData = await fetch(`https://api.openweathermap.org/data/2.5/weather?appid=114843591b3cb4652a2b94e65486c00a&units=metric&lang=en&lat=${lat}&lon=${long}`);
   cityData = await cityData.json();
-  console.log(cityData.name);
+  console.log(cityData);
   
   tempC = Math.trunc(current.temp);
   tempF = Math.round(current.temp * (9 / 5) + 32);
   if (activeTempUnit === "C") {
-    setCurrentWeather(tempC, current.weather[0].description, cityData.name);
+    setCurrentWeather(tempC, current.weather[0].description, cityData.name, cityData.sys.country);
   } else {
-    setCurrentWeather(tempF, current.weather[0].description, cityData.name);
+    setCurrentWeather(tempF, current.weather[0].description, cityData.name, cityData.sys.country);
   }
+
+  setFutureWeather(daily);
 }
 
 
@@ -48,13 +50,44 @@ function setHighlights(highlights) {
 }
 
 
-function setCurrentWeather(temp, desc, cityName) {
+function setCurrentWeather(temp, desc, cityName, country) {
   document.querySelector(".CurrentWeather-Value").textContent = temp;
   document.querySelector(".CurrentWeather-Unit").textContent = activeTempUnit;
   document.querySelector(".CurrentWeather-Desc").textContent = desc;
   document.querySelector(".currentWeatherImg-js").setAttribute("src", `images/${desc}.png`);
-  document.querySelector(".Location-Address").textContent = cityName;
+  document.querySelector(".Location-Address").textContent = cityName + ", " + country;
 }
+
+
+function setFutureWeather(dailyData) {
+  dailyData.forEach(element => {
+    let unixTime = element.dt;
+    let date = new Date(unixTime*1000);
+    console.log(date);
+    console.log(element);
+  });
+
+  // tomorrow is second index of daily data because data starts from current day to current day total 8 days data
+  let tomorrow = 1;
+  let maxElements = document.querySelectorAll(".FutureCard-MaxTempValue");
+  let minElements = document.querySelectorAll(".FutureCard-MinTempValue");
+  let futureWeatherImg = document.querySelectorAll(".FutureCard-WeatherImg");
+  let futureWeatherDesc = document.querySelectorAll(".FutureCard-Desc");
+
+  let elem = 0;
+  for (let i = tomorrow; i <= 5; i++) {
+    maxElements[elem].textContent = Math.trunc(dailyData[i].temp.max);
+    elem++;
+  }
+  elem = 0;
+  for (let i = tomorrow; i <= 5; i++) {
+    minElements[elem].textContent = Math.trunc(dailyData[i].temp.min);
+    futureWeatherImg[elem].setAttribute("src", `images/${dailyData[i].weather[0].description}.png`);
+    futureWeatherDesc[elem].textContent = dailyData[i].weather[0].description;
+    elem++;
+  }
+}
+
 
 navigator.geolocation.getCurrentPosition((position) => {
   let lat, long;
@@ -76,6 +109,19 @@ navigator.geolocation.getCurrentPosition((position) => {
   const dateArr = date.split(" ");
   let outputDate = `${dateArr[0]}, ${+dateArr[2]} ${dateArr[1]}`;
   document.querySelector(".date-js").textContent = outputDate;
+
+  // future card dates
+  let lastDate = new Date();
+  let futureCardDates = document.querySelectorAll(".FutureCard-Date");
+  for (let date of futureCardDates) {
+    lastDate = new Date(lastDate);
+    lastDate.setDate(lastDate.getDate() + 1)
+    let customisedDate = lastDate.toString();
+    let dateArr = customisedDate.split(" ");
+    let outputDate = `${dateArr[0]}, ${+dateArr[2]} ${dateArr[1]}`;
+    date.textContent = outputDate;
+  }
+  futureCardDates[0].textContent = "Tomorrow";
 })();
 
 document.querySelector(".switchC").addEventListener("click", () => {
