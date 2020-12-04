@@ -61,7 +61,7 @@
 }
 
 .Highlights-WindValueNum {
-  font-size: 3rem;
+  font-size: 2.4rem;
   vertical-align: center;
   font-weight: 500;
 }
@@ -91,7 +91,7 @@
 }
 
 .Highlights-HumidityPerValue {
-  font-size: 3rem;
+  font-size: 2.4rem;
 }
 
 .Highlights-HumidityPerIndicator {
@@ -113,7 +113,7 @@
 }
 
 .Highlights-VisibilityDistanceValue {
-  font-size: 3rem;
+  font-size: 2.4rem;
 }
 
 .Highlights-AirHeading {
@@ -129,7 +129,7 @@
 }
 
 .Highlights-AirPressureValue {
-  font-size: 3rem;
+  font-size: 2.4rem;
 }
 
 .Highlights-Wind, .Highlights-Humidity, .Highlights-Visibility, .Highlights-Air {
