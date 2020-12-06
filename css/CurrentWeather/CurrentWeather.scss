@@ -106,10 +106,10 @@
     border: none;
     box-shadow: 0px 4px 15px -5px black;
     cursor: pointer;
-    transition: 300ms ease-out;
+    transition: transform 300ms cubic-bezier(.14,.73,.65,2.05);
 
-    &:active {
-      transform: scale(0.95);
+    &:hover {
+      transform: scale(1.1);
     }
   }
 }
