@@ -129,7 +129,7 @@ async function searchCity() {
     document
       .querySelector(".recent-cities-name")
       .classList.add("recent-cities-name-visible");
-    addRecentCitySearch(inputCity);
+    if (inputCity !== "") addRecentCitySearch(inputCity);
     delCitiesItem();
     let urlNew = `https://api.openweathermap.org/data/2.5/onecall?lat=${cityData.coord.lat}&lon=${cityData.coord.lon}&exclude=minutely,hourly,alerts&appid=114843591b3cb4652a2b94e65486c00a&units=metric&lang=en`;
     getWeatherData(urlNew, cityData.coord.lat, cityData.coord.lon);
