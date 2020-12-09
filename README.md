@@ -31,32 +31,24 @@
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![screenshot](https://github.com/ramankarki/weather-app/blob/master/images/overview.gif)
 
-Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
+You can see this project live from above "See Live" link. I haven't used any library/framework or any proper design pattern like <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller" target="_blank">MVC</a> but I have fulfilled my motive i.e. to build this project using only HTML, vanilla CSS and JS and learn about APIs. I had an awesome experience building this project.
 
-- Where can I see your demo?
-- What was your experience?
-- What have you learned/improved?
-- Your wisdom? :)
-
-### Built With
+## Built With
 
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
 - [Html](https://developer.mozilla.org/en-US/docs/Web/HTML)
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [JavaScript](https://javascript.info/)
+- [openweathermap API](https://openweathermap.org/)
 
 
 ## How To Use
 
-<!-- Example: -->
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
-
-You can view current and upcoming 5 days weather details for your current location by default. You can also search for other cities weather details.
-
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+<p>You can use this project to see the weather info for current and upcoming 5 days.</p>
+<p>You can also search for more than 200,000 cities to get the weather details.</p>
 
 ## Contact
 
