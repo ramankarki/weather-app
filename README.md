@@ -31,7 +31,9 @@
 
 ## Overview
 
-<img src="https://github.com/ramankarki/weather-app/blob/master/images/overview.gif" align="center">
+<div align="center">
+   <img src="https://github.com/ramankarki/weather-app/blob/master/images/overview.gif" align="center">
+</div>
 
 You can see this project live from above "See Live" link. I haven't used any library/framework or any proper design pattern like <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller" target="_blank">MVC</a> but I have fulfilled my motive i.e. to build this project using only HTML, vanilla CSS and JS and learn about APIs. I had an awesome experience building this project.
 
